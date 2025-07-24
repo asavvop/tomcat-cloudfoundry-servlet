@@ -12,8 +12,8 @@ import jakarta.servlet.http.HttpServletResponse;
 @WebServlet("/helloservlet")
 public class HelloServlet extends HttpServlet {
 
-    @Resource(name = "envEntryName")
-    private String envEntryName;
+    @Resource(name = "foo")
+    private String foo;
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
@@ -26,7 +26,7 @@ public class HelloServlet extends HttpServlet {
         out.println("this.getServletContext().getServerInfo() = " + this.getServletContext().getServerInfo());
 
          
-        out.println("resource with envEntryName = " + envEntryName);
+        out.println("resource with foo = " + foo);
 
         out.println("this.getClass().getSuperclass() = " + this.getClass().getSuperclass());
         out.println("System.getProperty(\"java.version\") = " + System.getProperty("java.version"));
